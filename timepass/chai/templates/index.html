@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block tital %}
+timepass
+{% endblock tital %}
+
+
+
+{% block h1 %}
+<h1 class="bg-white text-yellow-600 ">my name is siddesh</h1>
+{% endblock h1 %}
+
+{% block body %}
+<h1 class="text-black size-5">Database</h1>
+<div class="flex justify-center items-center bg-black h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+        <h2 class="text-2xl font-bold mb-4">My Database</h2>
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="py-2 px-4 border-b">Image</th>
+                    <th class="py-2 px-4 border-b">ID</th>
+                    <th class="py-2 px-4 border-b">Name</th>
+                    <th class="py-2 px-4 border-b">Email</th>
+                    <th class="py-2 px-4 border-b">Phone</th>
+                    <th class="py-2 px-4 border-b">Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for chai in chais %}
+                <tr>
+                    <td class="py-2 px-4 border-b"><img src="{{ chai.image.url }}" alt="Image" class="w-16 h-16 rounded-full"></td>
+                    <td class="py-2 px-4 border-b">{{ chai.id }}</td>
+                    <td class="py-2 px-4 border-b">{{ chai.name }}</td>
+                    <td class="py-2 px-4 border-b">{{ chai.email }}</td>
+                    <td class="py-2 px-4 border-b">{{ chai.phone }}</td>
+                    <td class="py-2 px-4 border-b">{{ chai.type }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
