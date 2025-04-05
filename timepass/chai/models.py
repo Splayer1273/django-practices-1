@@ -15,6 +15,7 @@ class Chai(models.Model):
   phone=models.CharField(max_length=10)
   image=models.ImageField(upload_to='photos')
   type=models.CharField(max_length=15, choices=CHAI_TPYE_CHOICES, default='Masala Chai')
+  description=models.TextField(default='')
 
   def __str__(self):
     return self.name
